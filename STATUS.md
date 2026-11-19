@@ -63,7 +63,7 @@ footer referral `?ref=aa4mcy45`). `.makefun/owner.json` berisi wallet
 
 ## Commit & recording
 
-- Commit SHA final: (diisi setelah commit — lihat laporan akhir builder)
+- Commit SHA final: `2f39253` (commit build; HEAD final setelah commit STATUS ini — lihat laporan akhir builder)
 - Branch: master, repo: https://github.com/rismzz/gta6-cover-art-01.git
 - Recording id: 01a1f38e-7a18-77cf-b755-096ff09e3190
 - Batas submit: max 5/hari, 10 total; entries close 2026-11-21T10:30Z.
