@@ -1,0 +1,17 @@
+Font licence — Anton
+====================
+
+File: Anton-Regular.ttf
+Source: https://github.com/google/fonts/tree/main/ofl/anton
+Copyright: 2020 The Anton Project Authors (https://github.com/googlefonts/AntonFont.git)
+Licence: SIL Open Font License, Version 1.1 (https://openfontlicense.org)
+
+Anton is the only font shipped with this app. It is used for the cover
+title and subtitle lettering, drawn on canvas, and for the editor headings.
+The font is free to use, study, modify and redistribute under the SIL Open
+Font License 1.1: it may be bundled with this app, and it may not be sold
+on its own. No other font file is shipped, and no font is loaded from the
+network — the app works fully offline.
+
+No Rockstar Games logo, wordmark, artwork or font is used anywhere in
+this entry.

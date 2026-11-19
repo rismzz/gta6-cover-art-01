@@ -3,20 +3,72 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cover Snap</title>
+<title>Cover Snap — GTA-style cover art maker</title>
 <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <main class="app">
-  <section class="controls">
-    <h1>Cover Snap</h1>
-    <p>A photo and a caption, made into a square cover.</p>
-    <label>Photo <input id="photo" type="file" accept="image/*"></label>
-    <label>Caption <input id="caption" type="text" maxlength="40" value="Sunset Heist"></label>
-    <button id="export" type="button">Export PNG 1080 x 1080</button>
-    <p id="status" role="status"></p>
+  <section class="stage-wrap">
+    <div class="stage" id="stage">
+      <canvas id="cover" width="1080" height="1080" aria-label="Live cover preview"></canvas>
+      <p class="hint">Drag the photo inside a panel to move it &middot; scroll over a panel to zoom &middot; drop a photo file onto the cover</p>
+    </div>
   </section>
-  <canvas id="cover" width="1080" height="1080" aria-label="The cover"></canvas>
+  <aside class="controls" aria-label="Cover controls">
+    <header>
+      <h1>Cover Snap</h1>
+      <p>Your photo, a bold caption, a Vice City grade — a poster cover in three clicks.</p>
+    </header>
+
+    <section class="group">
+      <h2>1 &middot; Panels</h2>
+      <div class="picker" id="layout-picker">
+        <button type="button" data-layout="single">Solo</button>
+        <button type="button" data-layout="split">Split</button>
+        <button type="button" data-layout="triptych" class="on">Triptych</button>
+        <button type="button" data-layout="quad">Quad</button>
+      </div>
+      <div class="slots" id="slots"></div>
+      <div class="row">
+        <button type="button" id="fill-all" class="ghost">One photo in all panels</button>
+        <button type="button" id="reset-pan" class="ghost">Re-centre panel</button>
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>2 &middot; Caption</h2>
+      <label>Title
+        <input id="title" type="text" maxlength="32" value="Sunset Heist" autocomplete="off">
+      </label>
+      <label>Subtitle
+        <input id="subtitle" type="text" maxlength="48" value="Vice City — 2026" autocomplete="off">
+      </label>
+    </section>
+
+    <section class="group">
+      <h2>3 &middot; Colour grade</h2>
+      <div class="picker" id="grade-picker">
+        <button type="button" data-grade="sunset" class="on sw-sunset">Sunset</button>
+        <button type="button" data-grade="neon" class="sw-neon">Neon Night</button>
+        <button type="button" data-grade="pastel" class="sw-pastel">Pastel Day</button>
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>4 &middot; Export PNG</h2>
+      <div class="picker" id="size-picker">
+        <button type="button" data-size="square" class="on">1080 &times; 1080</button>
+        <button type="button" data-size="portrait">1080 &times; 1350</button>
+        <button type="button" data-size="wide">1920 &times; 1080</button>
+      </div>
+      <button type="button" id="export" class="big">Export PNG</button>
+      <p id="status" role="status">Loading…</p>
+    </section>
+
+    <footer>
+      <p>Photos stay on your machine — nothing is uploaded. Original design; no Rockstar logo, artwork or font. Display type: Anton (SIL OFL).</p>
+    </footer>
+  </aside>
 </main>
 <script type="module" src="./src/main.js"></script>
 </body>
